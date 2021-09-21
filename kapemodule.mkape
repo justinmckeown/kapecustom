@@ -1,0 +1,20 @@
+Description: 'Searches .csv files for hashes of keywords'
+Category: Custom
+Author: Justin McKeown
+Version: 1.0
+Id: 4a 757374696e206b-6579776f72-647320365-61726368
+BinaryUrl: https://github.com/justinmckeown/keywordsearch
+ExportFormat: csv
+Processors:
+    -
+        Executable: jkeywords.exe
+        CommandLine: -d %sourceDirectory% --csv %destinationDirectory% -q
+        ExportFormat: csv
+    -
+        Executable: jkeyword.exe
+        CommandLine: -d %sourceDirectory% --html %destinationDirectory% -q
+        ExportFormat: html
+    -
+        Executable: jkeywords.exe
+        CommandLine: -d %sourceDirectory% --json %destinationDirectory% -q
+        ExportFormat: json
